@@ -62,8 +62,8 @@ sudo apt install minknow-core-minion-1c-offline ont-bream4-mk1c \
 # 5. edit the minknow conf files to change the location of data and enable GPU basecalling
 # this can be done manually by using a text editor such as nano, this assumes you know what you want to edit:
 #cd /opt/ont/minknow/conf
-#sudo nano user_conf 
-#sudo nano app_conf
+#sudo -e user_conf 
+#sudo -e app_conf
 # in app_conf you want to ensure that "gpu_calling" is set to true
 
 
@@ -105,7 +105,7 @@ sudo sed -i -e 's/--keyboard //g' -e 's/--zoom-factor 2/--zoom-factor 1/g' /usr/
 ls -lhart /opt/ont/minknow/conf/firmware/
 # should see something like `MinGrid_fx3_1_2_7_ONT.img`
 # now check the usb_firmware.toml file
-sudo nano /opt/ont/minknow/conf/usb_firmware.toml
+sudo -e /opt/ont/minknow/conf/usb_firmware.toml
 # notice that the toml is linking to firmware that we don't have, change
 # this to reflect the firmware that is installed
 # should look something like the below:
